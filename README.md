@@ -3,6 +3,7 @@
 
 # Start
 1. open your terminal, cd to this folder
+1. copy and rename `.env.example` to `.env` and config it
 1. build mysql: `docker-compose up -d`
 1. install node.js modules: `npm i`
 1. run db migration: `node_modules/.bin/sequelize db:migrate`
