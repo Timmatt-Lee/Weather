@@ -1,17 +1,20 @@
 {
-  "name": "oil",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@koa/cors": "^3.1.0",
-    "axios": "^0.19.2",
-    "koa": "^2.13.0",
-    "mysql": "^2.18.1"
-  }
+	"name": "oil",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@koa/cors": "^3.1.0",
+		"axios": "^0.19.2",
+		"dotenv": "^8.2.0",
+		"koa": "^2.13.0",
+		"mysql2": "^2.1.0",
+		"sequelize": "^6.3.3",
+		"sequelize-cli": "^6.2.0"
+	}
 }
