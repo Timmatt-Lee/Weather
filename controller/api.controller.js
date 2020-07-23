@@ -1,11 +1,11 @@
+const auth = require('../middleware/auth');
 const axios = require('axios');
-const User = require('../models').User;
 
 exports.getWeather = async ctx => {
-	// get data
-	var u = await User.findAll();
-	console.log(u);
+	if (!auth(ctx))
+		ctx.body = "Need Login";
 
+	// get data
 	const url = 'https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/O-A0001-001?Authorization=CWB-42F0992A-D405-4D6B-AE5C-F9C09A49ABB5&downloadType=WEB&format=JSON';
 	const result = await axios.get(url);
 

@@ -14,9 +14,13 @@
 		"bcrypt": "^5.0.0",
 		"dotenv": "^8.2.0",
 		"koa": "^2.13.0",
+		"koa-requestid": "^2.1.0",
 		"koa-router": "^9.1.0",
+		"koa-session": "^6.0.0",
+		"md5": "^2.2.1",
 		"mysql2": "^2.1.0",
 		"sequelize": "^6.3.3",
-		"sequelize-cli": "^6.2.0"
+		"sequelize-cli": "^6.2.0",
+		"uuid": "^8.2.0"
 	}
 }
