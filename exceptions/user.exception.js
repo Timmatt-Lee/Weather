@@ -15,6 +15,10 @@ module.exports = {
         status: 400,
         msg: "user name not exists"
     },
+    nameExists: {
+        status: 400,
+        msg: "user name exists"
+    },
     insufficientPermission: {
         status: 401,
         msg: "insufficient permission"

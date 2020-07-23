@@ -22,6 +22,6 @@ app.use(bodyParser());
 app.use(cors());
 
 app.use(require('./routers/api.router.js').routes());
-app.use(require('./routers/login.router.js').routes());
+app.use(require('./routers/user.router.js').routes());
 
 app.listen(process.env.APP_PORT);
