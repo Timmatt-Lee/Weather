@@ -1,8 +1,7 @@
 const exception = require('../exceptions');
 
-
-module.exports = (ctx, next) => {
+module.exports = async (ctx, next) => {
     if (!ctx.session || !ctx.session.user)
         return exception(ctx, 'user', 'insufficientPermission');
-    return next();
+    await next();
 }

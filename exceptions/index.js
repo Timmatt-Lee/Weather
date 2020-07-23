@@ -21,7 +21,7 @@ function getStackTrace() {
     return obj.stack;
 };
 
-function response(ctx, genre, exception) {
+async function response(ctx, genre, exception) {
     if (exceptions[genre][exception] == undefined) {
         genre = 'api';
         exception = 'unexpectedError';
