@@ -1,22 +1,14 @@
-const auth = require('../middleware/auth')
 const exception = require('../exceptions');
 const User = require('../models').User;
 var validator = require('validator');
 
 exports.getLogin = async ctx => {
-	if (!auth(ctx))
-		return exception(ctx, 'user', 'insufficientPermission');
-	else
-		ctx.body = { name: ctx.session.user };
+	ctx.body = { name: ctx.session.user };
 }
 
 exports.getLogout = async ctx => {
-	if (!auth(ctx))
-		return exception(ctx, 'user', 'insufficientPermission');
-	else {
-		ctx.session = null;
-		ctx.body = {};
-	}
+	ctx.session = null;
+	ctx.body = {};
 }
 
 exports.postLogin = async ctx => {

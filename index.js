@@ -27,7 +27,7 @@ app.use(cors());
 app.use(require('./routers/api.router.js').routes());
 app.use(require('./routers/user.router.js').routes());
 
-// fetch weather when the minute is 01  
-schedule.scheduleJob('01 * * * *', weatherService);
+// fetch weather when the minute is 03  
+schedule.scheduleJob('03 * * * *', weatherService);
 
 app.listen(process.env.APP_PORT);
