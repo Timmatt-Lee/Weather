@@ -2,23 +2,23 @@
 const bcrypt = require("bcrypt");
 const { Model } = require('sequelize');
 
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataType) => {
 	class User extends Model { };
 
 	User.init({
 		id: {
-			type: DataTypes.INTEGER,
+			type: DataType.INTEGER,
 			autoIncrement: true,
 			primaryKey: true,
 			allowNull: false,
 		},
 		name: {
-			type: DataTypes.STRING,
+			type: DataType.STRING,
 			allowNull: false,
 			unique: true,
 		},
 		password: {
-			type: DataTypes.STRING,
+			type: DataType.STRING,
 			allowNull: false,
 			set(value) {
 				this.setDataValue(
@@ -28,16 +28,15 @@ module.exports = (sequelize, DataTypes) => {
 			},
 		},
 		createdAt: {
-			type: DataTypes.DATE,
+			type: DataType.DATE,
 			allowNull: false,
 		},
 		updatedAt: {
 			allowNull: false,
-			type: DataTypes.DATE
+			type: DataType.DATE
 		}
 	}, {
-		sequelize,
-		modelName: 'User',
+		sequelize
 	});
 
 	User.prototype.validatePassword = function (password) {

@@ -6,13 +6,5 @@ module.exports = {
     invalidParameter: {
         status: 400,
         msg: "invalid parameter"
-    },
-    apiNotFound: {
-        status: 404,
-        msg: "api not found"
-    },
-    methodNotAllowed: {
-        status: 400,
-        msg: "method not allowed"
     }
 }

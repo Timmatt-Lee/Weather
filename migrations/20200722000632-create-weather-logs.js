@@ -1,40 +1,42 @@
 'use strict';
 
 module.exports = {
-	up: async (queryInterface, Sequelize) => {
+	up: async (queryInterface, DataType) => {
 		await queryInterface.createTable('WeatherLogs', {
 			id: {
-				type: Sequelize.INTEGER,
+				type: DataType.INTEGER,
 				autoIncrement: true,
 				primaryKey: true,
 				allowNull: false,
 			},
-			elevation: Sequelize.FLOAT,
-			windDirection: Sequelize.INTEGER,
-			windSpeed: Sequelize.FLOAT,
-			temperature: Sequelize.FLOAT,
-			humidity: Sequelize.FLOAT,
-			pressure: Sequelize.FLOAT,
-			rain: Sequelize.FLOAT,
-			maxWindSpeed: Sequelize.FLOAT,
-			maxWindDirection: Sequelize.FLOAT,
-			maxWindTime: Sequelize.DATE,
-			maxTemperature: Sequelize.FLOAT,
-			maxTemperatureTime: Sequelize.DATE,
-			minTemperature: Sequelize.FLOAT,
-			minTemperatureTime: Sequelize.DATE,
+			city: DataType.STRING,
+			town: DataType.STRING,
+			elevation: DataType.FLOAT,
+			windDirection: DataType.INTEGER,
+			windSpeed: DataType.FLOAT,
+			temperature: DataType.FLOAT,
+			humidity: DataType.FLOAT,
+			pressure: DataType.FLOAT,
+			rain: DataType.FLOAT,
+			maxWindSpeed: DataType.FLOAT,
+			maxWindDirection: DataType.INTEGER,
+			maxWindTime: DataType.DATE,
+			maxTemperature: DataType.FLOAT,
+			maxTemperatureTime: DataType.DATE,
+			minTemperature: DataType.FLOAT,
+			minTemperatureTime: DataType.DATE,
 			createdAt: {
 				allowNull: false,
-				type: Sequelize.DATE
+				type: DataType.DATE
 			},
 			updatedAt: {
 				allowNull: false,
-				type: Sequelize.DATE
+				type: DataType.DATE
 			}
 		});
 	},
 
-	down: async (queryInterface, Sequelize) => {
+	down: async (queryInterface, DataType) => {
 		await queryInterface.dropTable('WeatherLogs');
 	}
 };
