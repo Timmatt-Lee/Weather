@@ -1,4 +1,3 @@
-const md5 = require('md5')
 const auth = require('../middleware/auth')
 const exception = require('../exceptions');
 const User = require('../models').User;
