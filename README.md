@@ -1,5 +1,6 @@
 # Required
-1. Require docker and node.js
+1. docker
+2. node.js
 
 # Start
 1. open your terminal, cd to this folder
