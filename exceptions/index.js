@@ -22,6 +22,11 @@ function getStackTrace() {
 };
 
 function response(ctx, genre, exception) {
+    if (exceptions[genre][exception] == undefined) {
+        genre = 'api';
+        exception = 'unexpectedError';
+    }
+
     ctx.status = exceptions[genre][exception].status;
 
     var data = {

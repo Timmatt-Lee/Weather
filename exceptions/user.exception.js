@@ -7,12 +7,16 @@ module.exports = {
         status: 401,
         msg: "token expired"
     },
-    usernameExists: {
-        status: 400,
-        msg: " user name exists"
+    wrongPassword: {
+        status: 500,
+        msg: "wrong password"
     },
-    usernameNotExists: {
+    nameNotExists: {
         status: 400,
         msg: "user name not exists"
-    }
+    },
+    insufficientPermission: {
+        status: 401,
+        msg: "insufficient permission"
+    },
 }

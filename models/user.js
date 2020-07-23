@@ -20,7 +20,12 @@ module.exports = (sequelize, DataTypes) => {
 		password: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			set: (value) => this.setDataValue(bcrypt.hash(value, bcrypt.genSaltSync(8))),
+			set(value) {
+				this.setDataValue(
+					'password',
+					bcrypt.hashSync(value, bcrypt.genSaltSync(8))
+				)
+			},
 		},
 		createdAt: {
 			type: DataTypes.DATE,
@@ -35,9 +40,9 @@ module.exports = (sequelize, DataTypes) => {
 		modelName: 'User',
 	});
 
-	User.prototype.validPassword = function (password) {
-		return bcrypt.compare(password, this.password);;
-	};
+	User.prototype.validatePassword = function (password) {
+		return bcrypt.compareSync(password, this.password);
+	}
 
 	return User;
 }
