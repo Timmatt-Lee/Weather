@@ -17,7 +17,8 @@ const app = new Koa();
 
 app.keys = [process.env.APP_KEY];
 
-// fetch weather when the minute is 03  
+weatherService();
+// fetch weather when the minute is 03
 schedule.scheduleJob('03 * * * *', weatherService);
 
 const router = new SwaggerRouter();

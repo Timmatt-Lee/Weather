@@ -4,10 +4,8 @@ module.exports = {
 	up: async (queryInterface, DataType) => {
 		await queryInterface.createTable('Users', {
 			id: {
-				type: DataType.INTEGER,
-				autoIncrement: true,
-				primaryKey: true,
-				allowNull: false,
+				type: DataType.UUID,
+				primaryKey: true
 			},
 			name: {
 				type: DataType.STRING,

@@ -1,7 +1,8 @@
 const { request, summary, tags, body, middlewares } = require('koa-swagger-decorator');
-const exception = require('../exceptions');
 const auth = require('../middlewares/auth');
+const exception = require('../exceptions');
 const User = require('../models').User;
+const { v4: uuidv4 } = require('uuid');
 var validator = require('validator');
 const sha512 = require('js-sha512');
 
@@ -31,7 +32,7 @@ class UserController {
 		if (user != null)
 			return exception(ctx, 'user', 'nameExists');
 
-		user = await User.create({ name: name, password: password });
+		user = await User.create({ id: uuidv4(), name: name, password: password });
 
 		ctx.session = {
 			id: user.id,
@@ -60,10 +61,7 @@ class UserController {
 			return exception(ctx, 'user', 'nameNotExists');
 
 		if (user.validatePassword(password)) {
-			ctx.session = {
-				id: user.id,
-				user: user.name
-			};
+			ctx.session.user = user.name
 
 			ctx.body = { name: ctx.session.user };
 		} else
