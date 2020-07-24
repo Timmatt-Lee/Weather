@@ -4,7 +4,7 @@ const axios = require('axios');
 const WeatherLog = require('../models').WeatherLog;
 
 async function WeatherService() {
-    rows = [];
+    var rows = [];
 
     await WeatherLog.destroy({ truncate: true });
 
